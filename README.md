@@ -3,6 +3,7 @@
 Fall 2026 study guide for Lemoore College. Follow the course modules, compare browser demos, and work through original practice questions.
 
 - [Open the review site](https://adobocoder.github.io/COMP001B.FA26.Review/)
+- [Open the HTML review](https://adobocoder.github.io/COMP001B.FA26.Review/html-review.html)
 - [Try the third-party library lab](https://adobocoder.github.io/COMP001B.FA26.Review/libraries.html)
 - [Course modules in Canvas](https://whccd.instructure.com/courses/30392/modules)
 - [Fall 2024 review by adoboCoder](https://github.com/adobocoder/FA24.COMP1B.Review)
@@ -10,3 +11,5 @@ Fall 2026 study guide for Lemoore College. Follow the course modules, compare br
 The site uses plain HTML, CSS, and JavaScript. Open `index.html` to preview it locally. GitHub Pages publishes the root of `main`. No installation or build is required.
 
 The library lab loads Bootstrap, Google Fonts, and Font Awesome from their public CDN or font service.
+
+The HTML review uses a [CC0 flower clip from MDN](https://github.com/mdn/interactive-examples/tree/main/live-examples/media/cc0-videos), a still from the clip, and original narration with captions.

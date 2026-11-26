@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#241936">
+  <meta name="description" content="Review core HTML skills with accessible examples, a working form, and practice for COMP-001B.">
+  <title>HTML Review · COMP-001B · Fall 2026</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./html-review.css">
+  <script src="./html-review.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">{ }</span><span>COMP-001B <small>LEMOORE COLLEGE</small></span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="./#modules">CSS modules</a>
+        <a href="./libraries.html">Library lab</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero html-hero" aria-labelledby="html-title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="accent-line"></span> MODULE 01 · FALL 2026</p>
+          <h1 id="html-title">HTML <em>Review.</em></h1>
+          <p class="hero-lead">Build the structure your CSS will style. Review how to mark up content, connect pages and files, and make links, media, tables, and forms usable.</p>
+          <div class="hero-actions">
+            <a class="button button-bright" href="#topics">Browse topics</a>
+            <a class="button button-quiet" href="#html-practice">Try the practice task</a>
+          </div>
+        </div>
+        <div class="hero-demo html-outline" role="group" aria-labelledby="outline-label">
+          <div class="demo-bar"><span aria-hidden="true" class="window-dots"><i></i><i></i><i></i></span><span>index.html</span></div>
+          <div class="hero-demo-body">
+            <p class="demo-caption" id="outline-label">A page with structure</p>
+            <pre><code><span>&lt;header&gt;</span> Campus Garden <span>&lt;/header&gt;</span>
+<span>&lt;nav&gt;</span>
+  <span>&lt;a href="./events.html"&gt;</span>Events<span>&lt;/a&gt;</span>
+<span>&lt;/nav&gt;</span>
+
+<span>&lt;main&gt;</span>
+  <span>&lt;h1&gt;</span> Seed Swap <span>&lt;/h1&gt;</span>
+  <span>&lt;p&gt;</span> Bring seeds to share. <span>&lt;/p&gt;</span>
+<span>&lt;/main&gt;</span>
+
+<span>&lt;footer&gt;</span> Contact <span>&lt;/footer&gt;</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap html-guide">
+      <section class="html-topics" id="topics" aria-labelledby="topic-title">
+        <h2 id="topic-title">Jump to a topic</h2>
+        <nav class="html-topic-links" aria-label="HTML topics">
+          <a href="#structure">Document structure</a><a href="#comments">Comments</a><a href="#headings">Headings</a>
+          <a href="#links">Hyperlinks</a><a href="#lists">Lists</a><a href="#media">Media</a>
+          <a href="#semantics">Semantics</a><a href="#tables">Tables</a><a href="#forms">Forms</a>
+          <a href="#html-practice">Practice</a>
+        </nav>
+      </section>
+
+      <div class="study-layout">
+        <aside class="contents">
+          <nav aria-label="Guide contents">
+            <h2>In this guide</h2>
+            <a href="#structure"><span>Document structure</span></a>
+            <a href="#comments"><span>Comments</span></a>
+            <a href="#headings"><span>Headings</span></a>
+            <a href="#links"><span>Hyperlinks</span></a>
+            <a href="#lists"><span>Lists</span></a>
+            <a href="#media"><span>Media</span></a>
+            <a href="#semantics"><span>Semantics</span></a>
+            <a href="#tables"><span>Tables</span></a>
+            <a href="#forms"><span>Forms</span></a>
+            <a href="#html-practice"><span>Practice</span></a>
+          </nav>
+        </aside>
+
+        <div class="lessons">
+          <section class="lesson" id="structure" aria-labelledby="structure-title">
+            <h2 id="structure-title">Document structure</h2>
+            <p class="lesson-lead">Start with a complete document and give the browser enough information to display it properly.</p>
+            <pre tabindex="0" aria-label="Complete HTML document with a stylesheet"><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;title&gt;Seed Swap | Campus Garden&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;h1&gt;Seed Swap&lt;/h1&gt;
+      &lt;p class="intro"&gt;Bring seeds to share.&lt;/p&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <dl class="definition-list">
+              <dt>Doctype &amp; language</dt><dd>The doctype tells the browser to use standards mode. <code>lang="en"</code> identifies the page language for tools such as screen readers.</dd>
+              <dt>Head &amp; body</dt><dd>The head holds metadata, the tab title, and stylesheet links. The body holds the page content. The viewport setting lets the mobile browser use the device width for layout.</dd>
+              <dt>Tags &amp; attributes</dt><dd>Most elements have opening and closing tags. Void elements such as <code>img</code>, <code>input</code>, and <code>link</code> have no closing tag. Attributes in the opening tag provide details such as <code>href</code> or <code>class</code>.</dd>
+              <dt>Nesting</dt><dd>Close the innermost element first. For example, use <code>&lt;p&gt;Bring &lt;strong&gt;seeds&lt;/strong&gt;.&lt;/p&gt;</code>. To show a literal <code>&lt;</code> or <code>&amp;</code> in HTML source, write <code>&amp;lt;</code> or <code>&amp;amp;</code>.</dd>
+              <dt>Classes &amp; IDs</dt><dd>Reuse <code>class="intro"</code> wherever you want shared styling with <code>.intro</code>. Use an <code>id</code> once per document to name a specific target, such as a heading or form field.</dd>
+            </dl>
+            <details class="self-check"><summary>Where do the browser tab title and visible page title go?</summary><p>Put <code>title</code> in the head for the browser tab and <code>h1</code> in the body for the visible page title. Use both so the page is easy to identify in either place.</p></details>
+          </section>
+
+          <section class="lesson" id="comments" aria-labelledby="comments-title">
+            <h2 id="comments-title">Comments</h2>
+            <p>Use comments for short explanations or reminders that help someone read the source. HTML comments do not appear as page text. Anyone who opens the source can still read them, so keep private information out of comments. Finish one comment before starting another.</p>
+            <pre tabindex="0" aria-label="HTML comment above a section heading"><code>&lt;!-- Keep the schedule in date order. --&gt;
+&lt;h2&gt;Upcoming events&lt;/h2&gt;</code></pre>
+            <details class="self-check"><summary>You can read a reminder in your editor, but it is absent from the browser. Why?</summary><p>Text between <code>&lt;!--</code> and <code>--&gt;</code> is a comment. Move information students need into an element such as a paragraph or list.</p></details>
+          </section>
+
+          <section class="lesson" id="headings" aria-labelledby="headings-title">
+            <h2 id="headings-title">Headings</h2>
+            <p>Use a descriptive <code>h1</code> for the page’s main topic, <code>h2</code> for its sections, and <code>h3</code> for subsections. Choose levels based on the outline. Use CSS when a heading needs a different size.</p>
+            <div class="html-example">
+              <h3>Sample page outline</h3>
+              <ul class="heading-outline">
+                <li><code>h1</code> Campus Garden
+                  <ul>
+                    <li><code>h2</code> Upcoming events
+                      <ul><li><code>h3</code> Seed swap</li></ul>
+                    </li>
+                    <li><code>h2</code> Visiting the garden</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <p><code>h1</code> through <code>h6</code> are available. Start at the appropriate level and move one level deeper when adding a subsection. It is normal to go back up a level after a subsection ends.</p>
+            <details class="self-check"><summary>What level should a subsection directly under an <code>h2</code> use?</summary><p>Use <code>h3</code>. When that subsection ends, the next section at the original level can use <code>h2</code> again.</p></details>
+          </section>
+
+          <section class="lesson" id="links" aria-labelledby="links-title">
+            <h2 id="links-title">Hyperlinks &amp; paths</h2>
+            <p class="lesson-lead">Use an anchor with <code>href</code> to take readers somewhere. Make the text describe the destination.</p>
+            <dl class="definition-list">
+              <dt>Same page</dt><dd><a href="#tables">Jump to the sample schedule</a> uses <code>href="#tables"</code> and matches the destination’s <code>id="tables"</code>.</dd>
+              <dt>Another local page</dt><dd><a href="./libraries.html">Open the library lab</a> uses <code>href="./libraries.html"</code>. The file sits beside this HTML page. Use <code>../</code> to move up one directory.</dd>
+              <dt>Another website</dt><dd><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">Read the MDN HTML reference</a> uses a full HTTPS URL.</dd>
+            </dl>
+            <pre tabindex="0" aria-label="Links to a local page, section, and external reference"><code>&lt;a href="./libraries.html"&gt;Open the library lab&lt;/a&gt;
+&lt;a href="#tables"&gt;Jump to the sample schedule&lt;/a&gt;
+&lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTML"&gt;MDN HTML reference&lt;/a&gt;</code></pre>
+            <p>Use a <code>button</code> for an action on the current page, such as submitting a form. Use <code>a</code> for navigation. Test links and assets from the published site and match capitalization exactly. On a GitHub Pages project site, a leading slash starts at the domain root and can skip the repository folder.</p>
+            <details class="self-check"><summary>A link works on your computer, but GitHub Pages returns 404. What do you check?</summary><p>Check the filename, letter case, relative path, and whether the target exists in the published repository. Use DevTools Network to see the exact failed request.</p></details>
+          </section>
+
+          <section class="lesson" id="lists" aria-labelledby="lists-title">
+            <h2 id="lists-title">Lists</h2>
+            <p>Use a list when items belong together. The element you choose tells a reader how the items relate.</p>
+            <div class="html-example list-examples">
+              <div>
+                <h3>Unordered · <code>ul</code></h3>
+                <ul><li>Seeds</li><li>Paper envelopes</li><li>Labels</li></ul>
+              </div>
+              <div>
+                <h3>Ordered · <code>ol</code></h3>
+                <ol><li>Label the envelope.</li><li>Add the seeds.</li><li>Seal the envelope.</li></ol>
+              </div>
+              <div>
+                <h3>Description · <code>dl</code></h3>
+                <dl><dt>Annual</dt><dd>A plant that completes its life cycle in one growing season.</dd></dl>
+              </div>
+            </div>
+            <pre tabindex="0" aria-label="HTML for an unordered list and a description list"><code>&lt;ul&gt;
+  &lt;li&gt;Seeds&lt;/li&gt;
+  &lt;li&gt;Paper envelopes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Annual&lt;/dt&gt;
+  &lt;dd&gt;A plant that completes its life cycle in one growing season.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+            <p>Use <code>li</code> for items in <code>ul</code> or <code>ol</code>. If an item needs a sublist, put the new list inside its parent <code>li</code>. Use <code>dt</code> and <code>dd</code> for terms and descriptions.</p>
+            <details class="self-check"><summary>How would you mark up directions where the order matters?</summary><p>Use <code>ol</code> with one <code>li</code> per step. A browser can present the items in order, and a screen reader can identify them as a list.</p></details>
+          </section>
+
+          <section class="lesson" id="media" aria-labelledby="media-title">
+            <h2 id="media-title">Images, audio &amp; video</h2>
+            <p class="lesson-lead">Use native media elements and give readers a text equivalent for information the media conveys.</p>
+            <div class="html-example media-examples">
+              <figure>
+                <img src="./html-media/flower-poster.jpg" width="720" height="405" loading="lazy" alt="A red flower bud among green leaves with purple edges.">
+                <figcaption>A still frame from the flower clip.</figcaption>
+              </figure>
+              <div>
+                <h3>Video with captions and native controls</h3>
+                <video controls preload="none" poster="./html-media/flower-poster.jpg" width="720" height="405" aria-label="Flower close-up video">
+                  <source src="./html-media/flower.mp4" type="video/mp4">
+                  <track kind="captions" src="./html-media/flower-captions.vtt" srclang="en" label="English" default>
+                  <a href="./html-media/flower.mp4">Download the flower video</a>.
+                </video>
+                <details class="worked-example"><summary>Read the visual description</summary><p>A close-up centers on a red flower bud among green leaves with purple edges. The background is out of focus.</p></details>
+              </div>
+              <div class="audio-example">
+                <h3>Audio with a transcript</h3>
+                <audio controls preload="none" aria-label="Flower description audio">
+                  <source src="./html-media/flower-description.m4a" type="audio/mp4">
+                  <a href="./html-media/flower-description.m4a">Download the flower description</a>.
+                </audio>
+                <p><strong>Transcript:</strong> A red flower bud sits among green leaves with purple edges.</p>
+              </div>
+            </div>
+            <dl class="definition-list">
+              <dt>Images</dt><dd>Use <code>img</code> with <code>src</code> and meaningful <code>alt</code> for informative images. Give a purely decorative image <code>alt=""</code>. Include width and height to reserve space. Use <code>max-width: 100%; height: auto;</code> in CSS so the image can shrink.</dd>
+              <dt>Audio &amp; video</dt><dd>Offer <code>controls</code>. Use <code>source</code> for the file URL and media type, and offer a fallback link. Provide a transcript for audio and synchronized captions for video with speech or meaningful sound. Describe meaningful visuals separately when needed.</dd>
+              <dt>Captions</dt><dd>Add a WebVTT file with <code>&lt;track kind="captions" src="./captions.vtt" srclang="en" label="English"&gt;</code> inside a video element. Use the video player’s captions menu to check the English caption against the narration.</dd>
+            </dl>
+            <details class="worked-example">
+              <summary>Inspect the image and media markup</summary>
+              <pre tabindex="0" aria-label="Image, video, and audio markup"><code>&lt;img src="./html-media/flower-poster.jpg"
+     width="720" height="405" alt="A red flower bud among green leaves with purple edges."&gt;
+
+&lt;video controls preload="none" poster="./html-media/flower-poster.jpg"&gt;
+  &lt;source src="./html-media/flower.mp4" type="video/mp4"&gt;
+  &lt;track kind="captions" src="./html-media/flower-captions.vtt"
+         srclang="en" label="English" default&gt;
+  &lt;a href="./html-media/flower.mp4"&gt;Download the flower video&lt;/a&gt;.
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="./html-media/flower-description.m4a" type="audio/mp4"&gt;
+&lt;/audio&gt;</code></pre>
+              <p>The flower clip and still frame come from the <a href="https://github.com/mdn/interactive-examples/tree/main/live-examples/media/cc0-videos">MDN CC0 video examples</a>. This lesson adds narration and captions.</p>
+            </details>
+            <details class="self-check"><summary>What should the alternative text say if the only content of a link is a map icon?</summary><p>Describe the destination or action, for example <code>alt="Open the garden map"</code>. If the same link already contains visible text that names the destination, the icon can use <code>alt=""</code>.</p></details>
+          </section>
+
+          <section class="lesson" id="semantics" aria-labelledby="semantics-title">
+            <h2 id="semantics-title">Semantics</h2>
+            <p class="lesson-lead">Choose elements for what the content means. Then use CSS to decide how they look.</p>
+            <dl class="definition-list">
+              <dt>Page landmarks</dt><dd><code>header</code> introduces the page or section. <code>nav</code> groups major navigation. <code>main</code> holds the page’s primary content. <code>footer</code> holds closing or supporting details.</dd>
+              <dt>Content groups</dt><dd><code>article</code> holds self-contained material such as an event announcement. <code>section</code> groups related content with a heading. <code>aside</code> holds related secondary content.</dd>
+              <dt>Text &amp; wrappers</dt><dd><code>p</code> is a paragraph. <code>strong</code> marks importance and <code>em</code> marks emphasis. <code>div</code> and <code>span</code> are generic wrappers when you need a styling hook and no more specific element fits.</dd>
+            </dl>
+            <pre tabindex="0" aria-label="Semantic layout for navigation, an article, and footer"><code>&lt;header&gt;
+  &lt;nav aria-label="Main"&gt;
+    &lt;a href="./index.html"&gt;Home&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;h1&gt;Campus Garden&lt;/h1&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Seed swap&lt;/h2&gt;
+    &lt;p&gt;Bring &lt;strong&gt;labeled seeds&lt;/strong&gt; to share.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+&lt;footer&gt;Campus Garden Club&lt;/footer&gt;</code></pre>
+            <details class="self-check"><summary>Why use a real <code>button</code> for an action instead of a styled <code>div</code>?</summary><p>A native button already participates in keyboard navigation, supports keyboard activation, and exposes its role to assistive technology. Apply your visual styles to the button.</p></details>
+          </section>
+
+          <section class="lesson" id="tables" aria-labelledby="tables-title">
+            <h2 id="tables-title">Tables</h2>
+            <p>Use a table for data with meaningful rows and columns. A caption names the table. Row and column headers help readers connect each cell with its context.</p>
+            <div class="html-example">
+              <table class="schedule-table">
+                <caption>Sample garden event schedule</caption>
+                <thead>
+                  <tr><th scope="col">Event</th><th scope="col">Day</th><th scope="col">Time</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Seed swap</th><td>Tuesday</td><td>10 a.m.</td></tr>
+                  <tr><th scope="row">Planting</th><td>Thursday</td><td>2 p.m.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <pre tabindex="0" aria-label="Accessible table caption, headers, and data cells"><code>&lt;table&gt;
+  &lt;caption&gt;Sample garden event schedule&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th scope="col"&gt;Event&lt;/th&gt;&lt;th scope="col"&gt;Day&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;th scope="row"&gt;Seed swap&lt;/th&gt;&lt;td&gt;Tuesday&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            <p><code>tr</code> groups cells into a row. Use <code>th</code> for header cells and <code>td</code> for data. Use CSS Grid or Flexbox when arranging page content visually.</p>
+            <details class="self-check"><summary>Which element gives the table its title? Which attribute identifies a row header?</summary><p><code>caption</code> names the table. Use <code>scope="row"</code> on the <code>th</code> that labels that row.</p></details>
+          </section>
+
+          <section class="lesson" id="forms" aria-labelledby="forms-title">
+            <h2 id="forms-title">Forms</h2>
+            <p class="lesson-lead">Connect every control to a visible label, group related choices, and choose types that match the information requested.</p>
+            <div class="html-example">
+              <h3 id="signup-title">Try a garden sign-up form</h3>
+              <p id="form-instructions">Use sample information, such as <code>gardener@example.com</code>. The form checks your input and previews it in this page.</p>
+              <form id="garden-form" aria-labelledby="signup-title" aria-describedby="form-instructions">
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="garden-name">Display name (required)</label>
+                    <input id="garden-name" name="display-name" type="text" required maxlength="40" pattern=".*\S.*" title="Enter at least one non-space character.">
+                  </div>
+                  <div class="form-field">
+                    <label for="garden-email">Sample email (required)</label>
+                    <input id="garden-email" name="email" type="email" required maxlength="100">
+                  </div>
+                  <div class="form-field">
+                    <label for="garden-event">Event (required)</label>
+                    <select id="garden-event" name="event" required>
+                      <option value="">Choose an event</option>
+                      <option value="Seed swap">Seed swap</option>
+                      <option value="Planting">Planting</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label for="garden-note">Note (optional)</label>
+                    <textarea id="garden-note" name="note" rows="2" maxlength="120"></textarea>
+                  </div>
+                </div>
+                <fieldset class="form-choice">
+                  <legend>Preferred role</legend>
+                  <label><input type="radio" name="role" value="Participant" checked> Participant</label>
+                  <label><input type="radio" name="role" value="Volunteer"> Volunteer</label>
+                </fieldset>
+                <label class="form-option"><input type="checkbox" name="bring-seeds" value="yes"> I can bring seeds to share.</label>
+                <div class="form-actions">
+                  <button class="button lab-link" type="submit" disabled>Preview sign-up</button>
+                  <button class="button html-reset" type="reset">Reset</button>
+                </div>
+              </form>
+              <p class="form-result" id="form-preview" role="status"></p>
+              <noscript><p>The preview uses JavaScript. The markup and self-check below are still available.</p></noscript>
+            </div>
+            <dl class="definition-list">
+              <dt><code>label</code>, <code>id</code> &amp; <code>name</code></dt><dd>Match a label’s <code>for</code> to the control’s unique <code>id</code>. A control’s <code>name</code> identifies its value in form data. A placeholder disappears when you type and cannot replace a label.</dd>
+              <dt>Common controls</dt><dd>Use <code>select</code> for choices and <code>textarea</code> for multiline text. Radio buttons that share a <code>name</code> allow one choice. Checkboxes are independent. Use <code>fieldset</code> and <code>legend</code> to name related controls.</dd>
+              <dt>Validation &amp; submission</dt><dd><code>required</code> checks for a value. <code>type="email"</code> checks email syntax. For a form that sends data, <code>action</code> sets the destination and <code>method</code> sets how it is sent. <code>get</code> adds values to the URL and <code>post</code> sends them in the request body. A real service also validates on the server.</dd>
+            </dl>
+            <details class="worked-example">
+              <summary>Inspect labels, input types, and a grouped choice</summary>
+              <pre tabindex="0" aria-label="HTML form labels, email validation, and radio buttons"><code>&lt;form&gt;
+  &lt;label for="email"&gt;Sample email (required)&lt;/label&gt;
+  &lt;input id="email" name="email" type="email" required&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Preferred role&lt;/legend&gt;
+    &lt;label&gt;&lt;input type="radio" name="role" value="participant" checked&gt; Participant&lt;/label&gt;
+    &lt;label&gt;&lt;input type="radio" name="role" value="volunteer"&gt; Volunteer&lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;button type="submit"&gt;Preview sign-up&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+              <p>The live example uses a short script to show a preview inside the page. GitHub Pages serves the HTML, CSS, and JavaScript for the demo.</p>
+            </details>
+            <details class="self-check"><summary>Why does clicking an email label sometimes fail to focus its field?</summary><p>Check that the label’s <code>for</code> value matches the field’s <code>id</code> exactly and that the ID appears only once. The <code>name</code> value serves a different purpose.</p></details>
+          </section>
+
+          <section class="lesson practice" id="html-practice" aria-labelledby="html-practice-title">
+            <h2 id="html-practice-title">Practice an HTML-first build</h2>
+            <p>Create a small campus event page in <code>index.html</code>. Give it a title, semantic landmarks, and an outline of headings. Add a schedule table, a preparation list, an image with alternative text, and a form with a labeled field. Link a stylesheet after the structure is in place.</p>
+            <ol>
+              <li>Open the page and follow every link. Confirm that the image and stylesheet resolve both locally and on GitHub Pages.</li>
+              <li>Tab through the controls and check the focus order. Try submitting with an empty required field and an invalid email.</li>
+              <li>Use the browser’s Elements panel to check nesting and see how the browser interpreted your source. Fix issues reported by the HTML validator, then test again.</li>
+            </ol>
+            <details class="self-check">
+              <summary>Debug a short event page</summary>
+              <pre tabindex="0" aria-label="HTML with heading, link, and label mistakes"><code>&lt;h1&gt;Campus Garden&lt;/h1&gt;
+&lt;h3&gt;Next event&lt;/h3&gt;
+&lt;a href="#schedule"&gt;See the schedule&lt;/a&gt;
+&lt;h2 id="timetable"&gt;Schedule&lt;/h2&gt;
+&lt;label for="mail"&gt;Email&lt;/label&gt;
+&lt;input id="email" type="email"&gt;</code></pre>
+              <p>Make “Next event” an <code>h2</code> if it is a top-level section. Make the link fragment and heading ID match. Connect the label to <code>id="email"</code> and add a <code>name</code> if the value should go with form data.</p>
+            </details>
+            <p class="course-note">Use <a href="https://whccd.instructure.com/courses/30392/modules">Canvas Modules</a> for official course instructions. AI-assisted and AI-generated student content are prohibited in this course.</p>
+          </section>
+
+          <section class="lesson references" id="html-references" aria-labelledby="html-reference-title">
+            <h2 id="html-reference-title">HTML references</h2>
+            <ul class="reference-list">
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN HTML</a><span>Elements, attributes, and examples</span></li>
+              <li><a href="https://validator.w3.org/nu/">HTML validator</a><span>Check your markup</span></li>
+              <li><a href="https://www.w3.org/WAI/tutorials/forms/">W3C forms tutorial</a><span>Labels, groups, instructions, and feedback</span></li>
+              <li><a href="https://www.w3.org/WAI/tutorials/tables/">W3C tables tutorial</a><span>Captions and cell headers</span></li>
+              <li><a href="https://www.w3.org/WAI/media/av/">W3C accessible media</a><span>Captions, transcripts, and descriptions</span></li>
+              <li><a href="./#foundations">Return to CSS foundations</a><span>Stylesheets, selectors, and the cascade</span></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner"><p><strong>COMP-001B</strong> · Lemoore College · Fall 2026</p><a href="#top">Back to top</a></div>
+  </footer>
+</body>
+</html>
