@@ -17,6 +17,7 @@
       <nav class="site-nav" aria-label="Main">
         <a href="#modules">Modules</a>
         <a href="#practice">Practice</a>
+        <a href="./libraries.html">Library lab</a>
         <a href="#references">References</a>
       </nav>
     </div>
@@ -72,7 +73,7 @@
           <li data-topics="position normal flow static relative absolute fixed sticky inset float clear clearfix flow-root flexbox axis z-index"><a href="#positioning"><span class="module-number">03</span><h3>Display &amp; positioning</h3><p>Place elements, wrap text, and align items.</p></a></li>
           <li data-topics="color colours brand palette rgb rgba hsl hex contrast accessibility typography fonts google fonts vertical rhythm line height spacing"><a href="#design"><span class="module-number">04</span><h3>Color &amp; typography</h3><p>Shape hierarchy with a readable visual system.</p></a></li>
           <li data-topics="grid row column track line gap gutters container fr minmax repeat media query responsive bootstrap layout"><a href="#grid"><span class="module-number">05</span><h3>CSS Grid</h3><p>Build layouts that adapt to the available width.</p></a></li>
-          <li data-topics="bootstrap buttons navbars sidebars offcanvas CDN javascript bundle third party libraries framework jquery font awesome v4 v6 google fonts npm yarn bower github pages hosting deploy"><a href="#bootstrap"><span class="module-number">06</span><h3>Bootstrap &amp; publishing</h3><p>Use libraries, components, and GitHub Pages.</p></a></li>
+          <li data-topics="bootstrap buttons cards badges accordion navbars sidebars offcanvas CDN javascript bundle third party libraries framework jquery font awesome v4 v6 google fonts npm yarn bower github pages hosting deploy"><a href="#bootstrap"><span class="module-number">06</span><h3>Bootstrap &amp; publishing</h3><p>Use libraries, components, and GitHub Pages.</p></a></li>
           <li data-topics="review preparation study practice cumulative quiz finals assessment integration debugging validate keyboard zoom"><a href="#practice"><span class="module-number">07–08</span><h3>Review &amp; finals</h3><p>Connect the concepts and practice debugging.</p></a></li>
         </ol>
       </section>
@@ -224,7 +225,7 @@
   max-width: 65ch;
 }
 .reading p + p { margin-block-start: 1em; }</code></pre>
-            <p>When using Google Fonts, add the provider’s stylesheet link in the head and request the weights you use. Keep the fallback stack so the page remains readable when the web font is slow or unavailable.</p>
+            <p>When using Google Fonts, add the provider’s stylesheet link in the head and request the weights you use. Keep the fallback stack so the page remains readable when the web font is slow or unavailable. <a href="./libraries.html#google-fonts">Compare Google Fonts in the lab.</a></p>
             <details class="self-check"><summary>How would you improve a paragraph that feels long, dense, and hard to scan?</summary><p>Start with a shorter measure and more line height. Group ideas into shorter paragraphs, set a consistent gap, and check weight, size, and contrast on a narrow screen. Test at 200% zoom.</p></details>
           </section>
 
@@ -260,6 +261,7 @@
             <p class="eyebrow">MODULE 06</p>
             <h2 id="bootstrap-title">Bootstrap &amp; publishing</h2>
             <p class="lesson-lead">Choose what to reuse, read the documentation for the version you load, and test the published build.</p>
+            <p><a class="button lab-link" href="./libraries.html">Open the live library lab</a></p>
             <h3>Read Bootstrap markup</h3>
             <p>Add Bootstrap’s CSS from its official starter and place your overrides after it. Load the matching Bootstrap bundle for interactive components such as a collapsing navbar or an offcanvas sidebar. The default Bootstrap grid uses Flexbox and a 12-column span system. A <code>.container</code> sets responsive widths, <code>.row</code> holds columns, and <code>.g-3</code> sets the gutters.</p>
             <pre tabindex="0" aria-label="A responsive Bootstrap row"><code>&lt;div class="container"&gt;

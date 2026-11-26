@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#241936">
+  <meta name="description" content="Try Bootstrap components, Google Fonts, and Font Awesome in the COMP-001B library lab.">
+  <title>Third-party library lab · COMP-001B</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=Inter:wght@400;700&amp;family=Playfair+Display:wght@400;600&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css" integrity="sha384-qrALq7+6jBOZIQsNnT6xGkMDru64qD6uTlDra39xrt2SoXl4pO3FX6Roz/RpR/BS" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./libraries.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous" defer></script>
+</head>
+<body class="library-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">{ }</span><span>COMP-001B <small>LEMOORE COLLEGE</small></span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="./#modules">Study modules</a>
+        <a href="./#practice">Mixed review</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="library-hero">
+      <div class="wrap">
+        <p class="eyebrow">MODULE 06</p>
+        <h1>Third-party <em>library lab.</em></h1>
+        <p>Try each example in the browser, then inspect the markup and styles that make it work.</p>
+        <nav class="library-jumps" aria-label="Library demos">
+          <a href="#bootstrap">Bootstrap</a>
+          <a href="#google-fonts">Google Fonts</a>
+          <a href="#font-awesome">Font Awesome</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="wrap library-lessons">
+      <section class="lesson" id="bootstrap" aria-labelledby="bootstrap-title">
+        <h2 id="bootstrap-title">Bootstrap</h2>
+        <p class="lesson-lead">Build a responsive card layout, style a link or button, and wire up an accordion using Bootstrap classes and attributes.</p>
+        <div class="library-demo" role="group" aria-labelledby="bootstrap-demo-title">
+          <h3 id="bootstrap-demo-title">Sample campus events</h3>
+          <p>Resize the browser to see the cards stack below 768 pixels. Open the accordion to see what the JavaScript bundle adds.</p>
+          <div class="row g-3 mb-3" id="event-grid">
+            <div class="col-12 col-md-6">
+              <article class="card h-100">
+                <div class="card-body">
+                  <p class="badge text-bg-success">Workshop</p>
+                  <h4 class="card-title h5">Garden planting</h4>
+                  <p class="card-text">Tuesday · 10 a.m.</p>
+                  <a class="btn btn-primary" href="#garden-details">View event details</a>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6">
+              <article class="card h-100">
+                <div class="card-body">
+                  <p class="badge text-bg-secondary">Study group</p>
+                  <h4 class="card-title h5">CSS practice</h4>
+                  <p class="card-text">Thursday · 2 p.m.</p>
+                  <a class="btn btn-outline-primary" href="./#practice">Open practice</a>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div id="garden-details">
+            <h4 class="h5">Garden planting details</h4>
+            <div class="accordion" id="garden-accordion">
+              <div class="accordion-item">
+                <h5 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#garden-location" aria-expanded="false" aria-controls="garden-location">Where do we meet?</button>
+                </h5>
+                <div class="accordion-collapse collapse" id="garden-location" data-bs-parent="#garden-accordion">
+                  <div class="accordion-body">Meet by the south entrance to the campus garden.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h5 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#garden-supplies" aria-expanded="false" aria-controls="garden-supplies">What should I bring?</button>
+                </h5>
+                <div class="accordion-collapse collapse" id="garden-supplies" data-bs-parent="#garden-accordion">
+                  <div class="accordion-body">Bring water and wear closed-toe shoes. Gloves and tools are provided.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><code>.row</code> groups columns, <code>.g-3</code> sets gutters, and <code>col-12 col-md-6</code> applies both column classes to the same element. Each card takes a full row on a phone and half a row from the <code>md</code> breakpoint onward. The card, badge, spacing, and button styles come from the Bootstrap stylesheet. The accordion uses the Bootstrap bundle to update its expanded state.</p>
+        <details class="worked-example">
+          <summary>Inspect the Bootstrap imports and markup</summary>
+          <p>Load Bootstrap CSS before your custom CSS and use the matching version of its JavaScript bundle. Copy the full CDN tags from the official starter to include integrity hashes.</p>
+          <pre tabindex="0" aria-label="Bootstrap CSS and JavaScript imports"><code>&lt;!-- In the head --&gt;
+&lt;link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"&gt;
+&lt;script defer
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+          <pre tabindex="0" aria-label="Bootstrap grid, card, and button classes"><code>&lt;div class="row g-3"&gt;
+  &lt;div class="col-12 col-md-6"&gt;
+    &lt;article class="card h-100"&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h4 class="card-title h5"&gt;Garden planting&lt;/h4&gt;
+        &lt;a class="btn btn-primary" href="#garden-details"&gt;View event details&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;
+  &lt;!-- Add a second .col-12.col-md-6 here. --&gt;
+&lt;/div&gt;</code></pre>
+          <pre tabindex="0" aria-label="Bootstrap collapse trigger and target"><code>&lt;button type="button" data-bs-toggle="collapse"
+        data-bs-target="#garden-location" aria-controls="garden-location"
+        aria-expanded="false"&gt;
+  Where do we meet?
+&lt;/button&gt;
+&lt;div class="collapse" id="garden-location"&gt;Meet at the south entrance.&lt;/div&gt;</code></pre>
+          <p class="library-docs"><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Bootstrap starter</a> <a href="https://getbootstrap.com/docs/5.3/layout/grid/">Grid docs</a> <a href="https://getbootstrap.com/docs/5.3/components/accordion/">Accordion docs</a></p>
+        </details>
+        <details class="self-check"><summary>The cards look styled, but the accordion stays closed. What should you inspect?</summary><p>Check DevTools Network for the Bootstrap bundle. Confirm that it loads and that the trigger’s <code>data-bs-target</code> matches the target ID exactly.</p></details>
+      </section>
+
+      <section class="lesson" id="google-fonts" aria-labelledby="fonts-title">
+        <h2 id="fonts-title">Google Fonts</h2>
+        <p class="lesson-lead">Load web fonts in the head. Compare a sans serif, a serif, and a monospace family on the same wording.</p>
+        <div class="library-demo" role="group" aria-labelledby="font-demo-title">
+          <h3 id="font-demo-title">Compare typefaces</h3>
+          <fieldset class="font-picker">
+            <legend>Sample font</legend>
+            <div class="font-options">
+              <label><input type="radio" name="sample-font" id="font-inter" checked> Inter</label>
+              <label><input type="radio" name="sample-font" id="font-playfair"> Playfair Display</label>
+              <label><input type="radio" name="sample-font" id="font-plex"> IBM Plex Mono</label>
+            </div>
+            <div class="font-sample" id="font-sample">
+              <p class="sample-headline">Grow something good.</p>
+              <p>Join the campus garden for a morning of planting and conversation.</p>
+            </div>
+          </fieldset>
+        </div>
+        <p>Inter uses a sans-serif fallback, Playfair Display uses a serif fallback, and IBM Plex Mono uses a monospace fallback. Notice how the headline and paragraph wrap as the letter shapes change. Request the weights you actually use and keep system fallbacks so the text stays readable while the web font loads.</p>
+        <details class="worked-example">
+          <summary>Inspect the font link and fallback stack</summary>
+          <pre tabindex="0" aria-label="Google Fonts CSS API link"><code>&lt;link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;amp;display=swap"&gt;</code></pre>
+          <pre tabindex="0" aria-label="Google Font family and fallback stack"><code>.font-sample {
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 400;
+}
+.sample-headline { font-weight: 700; }</code></pre>
+          <p><a href="https://developers.google.com/fonts/docs/css2">Google Fonts CSS API</a></p>
+        </details>
+        <details class="self-check"><summary>The font request fails. Which family does the browser try after Inter?</summary><p>It tries <code>system-ui</code>, then the browser’s generic <code>sans-serif</code> family. A cache or network failure is easy to check in DevTools Network.</p></details>
+      </section>
+
+      <section class="lesson" id="font-awesome" aria-labelledby="icons-title">
+        <h2 id="icons-title">Font Awesome</h2>
+        <p class="lesson-lead">Pair symbols with readable labels. Try solid, regular, and brand icons and give icon-only controls accessible names.</p>
+        <div class="library-demo" role="group" aria-labelledby="icons-demo-title">
+          <h3 id="icons-demo-title">Icons in context</h3>
+          <ul class="icon-examples">
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><strong>Location</strong><code>fa-solid fa-location-dot</code></span></li>
+            <li><i class="fa-regular fa-calendar" aria-hidden="true"></i><span><strong>Calendar</strong><code>fa-regular fa-calendar</code></span></li>
+            <li><i class="fa-brands fa-github" aria-hidden="true"></i><span><strong>GitHub</strong><code>fa-brands fa-github</code></span></li>
+          </ul>
+          <div class="bookmark-example">
+            <input class="visually-hidden" type="checkbox" id="sample-bookmark">
+            <label class="bookmark-control" for="sample-bookmark">
+              <i class="fa-regular fa-bookmark bookmark-off" aria-hidden="true"></i>
+              <i class="fa-solid fa-bookmark bookmark-on" aria-hidden="true"></i>
+              <span class="visually-hidden">Bookmark the sample event</span>
+            </label>
+            <p class="bookmark-hint">Toggle the sample bookmark with a click or the Space key.</p>
+          </div>
+        </div>
+        <p>Font Awesome class names identify the style and the icon. Here the icons next to text are decorative, so they use <code>aria-hidden="true"</code>. For the icon-only bookmark, a visually hidden label names the control and a native checkbox exposes its checked state.</p>
+        <details class="worked-example">
+          <summary>Inspect the stylesheet and icon markup</summary>
+          <pre tabindex="0" aria-label="Font Awesome stylesheet and icons"><code>&lt;link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"&gt;
+
+&lt;i class="fa-solid fa-location-dot" aria-hidden="true"&gt;&lt;/i&gt; Location
+
+&lt;a href="https://github.com/"&gt;
+  &lt;i class="fa-brands fa-github" aria-hidden="true"&gt;&lt;/i&gt; GitHub
+&lt;/a&gt;
+
+&lt;input class="visually-hidden" type="checkbox" id="bookmark"&gt;
+&lt;label for="bookmark"&gt;
+  &lt;i class="fa-regular fa-bookmark" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;span class="visually-hidden"&gt;Bookmark the sample event&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+          <p><a href="https://docs.fontawesome.com/web/add-icons/how-to">Font Awesome icon markup</a></p>
+        </details>
+        <details class="self-check"><summary>How does a screen reader know what the bookmark control does?</summary><p>It reads the label “Bookmark the sample event,” which is connected to the checkbox through matching <code>for</code> and <code>id</code> values. It also reports whether the checkbox is checked.</p></details>
+      </section>
+      <p class="library-return"><a href="./#bootstrap">Return to Bootstrap &amp; publishing</a></p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner"><p><strong>COMP-001B</strong> · Lemoore College · Fall 2026</p><a href="#top">Back to top</a></div>
+  </footer>
+</body>
+</html>

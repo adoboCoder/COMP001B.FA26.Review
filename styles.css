@@ -131,6 +131,8 @@ section[id] { scroll-margin-block-start: 1rem; }
 .button-bright:hover { background: #ffc5e4; }
 .button-quiet { border-color: #8e7aa9; color: #fff; }
 .button-quiet:hover { background: #423153; }
+.lab-link { background: var(--primary); color: #fff; }
+.lab-link:hover { background: #482682; text-decoration: underline; }
 
 .hero-demo {
   min-width: 0;
