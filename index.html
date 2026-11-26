@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Review the full Fall 2026 COMP-001B CSS course with examples, live demos, and practice questions.">
+  <meta name="theme-color" content="#241936">
+  <title>CSS Review · COMP-001B · Fall 2026</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./review.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">{ }</span><span>COMP-001B <small>LEMOORE COLLEGE</small></span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#modules">Modules</a>
+        <a href="#practice">Practice</a>
+        <a href="#references">References</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="accent-line"></span> FALL 2026 STUDY GUIDE</p>
+          <h1 id="title">CSS<br><em>Review.</em></h1>
+          <p class="hero-lead">From your first linked stylesheet to responsive layouts. Revisit the concepts, predict what the code will do, then check your reasoning in the browser.</p>
+          <div class="hero-actions">
+            <a class="button button-bright" href="#modules">Browse modules</a>
+            <a class="button button-quiet" href="#practice">Try the mixed review</a>
+          </div>
+        </div>
+        <div class="hero-demo" role="group" aria-labelledby="layout-caption">
+          <div class="demo-bar"><span aria-hidden="true" class="window-dots"><i></i><i></i><i></i></span><span>layout.css</span></div>
+          <div class="hero-demo-body">
+            <p class="demo-caption" id="layout-caption">One layout, three ways to display it</p>
+            <div class="mode-buttons js-only" role="group" aria-label="Layout mode">
+              <button type="button" data-mode="grid" aria-pressed="true">Grid</button>
+              <button type="button" data-mode="flex" aria-pressed="false">Flex</button>
+              <button type="button" data-mode="block" aria-pressed="false">Block</button>
+            </div>
+            <div class="layout-preview" id="layout-preview" data-layout="grid" aria-hidden="true">
+              <span>Header</span><span>Article</span><span>Aside</span><span>Footer</span>
+            </div>
+            <p class="demo-code"><code id="layout-code">display: grid;</code><span id="layout-note" aria-live="polite">Rows and columns</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="module-map" id="modules" aria-labelledby="modules-title">
+        <div class="section-intro">
+          <div>
+            <p class="eyebrow">THE COURSE AT A GLANCE</p>
+            <h2 id="modules-title">Study by module</h2>
+            <p>Start anywhere. Each lesson pairs a short explanation with an example and a question to try on your own.</p>
+          </div>
+          <div class="topic-search js-only">
+            <label for="topic-search">Find a topic</label>
+            <input type="search" id="topic-search" placeholder="Try “specificity” or “Flexbox”">
+          </div>
+        </div>
+        <p id="search-status" role="status" class="search-status"></p>
+        <ol class="module-cards">
+          <li data-topics="html headings comments links hyperlinks lists media images video audio tables semantics emmet git github vscode wakapi selectors specificity cascade inheritance focus validation"><a href="#foundations"><span class="module-number">01</span><h3>Foundations &amp; tooling</h3><p>Semantic HTML, writing CSS, and working with Git.</p></a></li>
+          <li data-topics="box model content-box border-box margin border padding width rem percent DevTools inline block inline-block display overflow sizing"><a href="#box-model"><span class="module-number">02</span><h3>Box model &amp; display</h3><p>Predict dimensions, spacing, and overflow.</p></a></li>
+          <li data-topics="position normal flow static relative absolute fixed sticky inset float clear clearfix flow-root flexbox axis z-index"><a href="#positioning"><span class="module-number">03</span><h3>Display &amp; positioning</h3><p>Place elements, wrap text, and align items.</p></a></li>
+          <li data-topics="color colours brand palette rgb rgba hsl hex contrast accessibility typography fonts google fonts vertical rhythm line height spacing"><a href="#design"><span class="module-number">04</span><h3>Color &amp; typography</h3><p>Shape hierarchy with a readable visual system.</p></a></li>
+          <li data-topics="grid row column track line gap gutters container fr minmax repeat media query responsive bootstrap layout"><a href="#grid"><span class="module-number">05</span><h3>CSS Grid</h3><p>Build layouts that adapt to the available width.</p></a></li>
+          <li data-topics="bootstrap buttons navbars sidebars offcanvas CDN javascript bundle third party libraries framework jquery font awesome v4 v6 google fonts npm yarn bower github pages hosting deploy"><a href="#bootstrap"><span class="module-number">06</span><h3>Bootstrap &amp; publishing</h3><p>Use libraries, components, and GitHub Pages.</p></a></li>
+          <li data-topics="review preparation study practice cumulative quiz finals assessment integration debugging validate keyboard zoom"><a href="#practice"><span class="module-number">07–08</span><h3>Review &amp; finals</h3><p>Connect the concepts and practice debugging.</p></a></li>
+        </ol>
+      </section>
+
+      <div class="study-layout">
+        <aside class="contents">
+          <nav aria-label="Study guide contents">
+            <h2>In this guide</h2>
+            <a href="#foundations">01 <span>Foundations &amp; tooling</span></a>
+            <a href="#box-model">02 <span>Box model &amp; display</span></a>
+            <a href="#positioning">03 <span>Display &amp; positioning</span></a>
+            <a href="#design">04 <span>Color &amp; typography</span></a>
+            <a href="#grid">05 <span>CSS Grid</span></a>
+            <a href="#bootstrap">06 <span>Bootstrap &amp; publishing</span></a>
+            <a href="#practice">07–08 <span>Review &amp; finals</span></a>
+            <a href="#references"><span>References</span></a>
+          </nav>
+        </aside>
+
+        <div class="lessons">
+          <section class="lesson" id="foundations" aria-labelledby="foundations-title">
+            <p class="eyebrow">MODULE 01</p>
+            <h2 id="foundations-title">Foundations &amp; tooling</h2>
+            <p class="lesson-lead">Give the page a meaningful HTML structure, link its stylesheet, and use the browser to see which declarations apply.</p>
+            <h3>Build the document</h3>
+            <p>Start with a doctype and a language. The head holds metadata, the tab title, and the stylesheet link. The body holds the visible page. For this example, <code>styles.css</code> sits beside the HTML file.</p>
+            <pre tabindex="0" aria-label="HTML document and linked stylesheet"><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;title&gt;Campus garden&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;h1&gt;Campus garden&lt;/h1&gt;
+      &lt;p class="note"&gt;Open on Tuesdays.&lt;/p&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <h3>HTML reference</h3>
+            <dl class="definition-list">
+              <dt>Comments</dt><dd>Write HTML comments with <code>&lt;!-- note --&gt;</code> and CSS comments with <code>/* note */</code>. HTML comments remain visible in the source.</dd>
+              <dt>Headings &amp; landmarks</dt><dd>Use a descriptive <code>h1</code> and nest heading levels by topic. Use <code>header</code>, <code>nav</code>, <code>main</code>, <code>article</code>, <code>aside</code>, and <code>footer</code> for the roles they describe.</dd>
+              <dt>Links &amp; lists</dt><dd>Use an <code>a</code> with an <code>href</code> for navigation. Give it descriptive link text. Use <code>ol</code> for sequences, <code>ul</code> for unordered groups, and <code>dl</code> for terms and explanations.</dd>
+              <dt>Media</dt><dd>Give informative images meaningful <code>alt</code> text and decorative images <code>alt=""</code>. Use native controls for audio and video, captions for video with speech or relevant sound, and a transcript for audio-only content.</dd>
+              <dt>Tables</dt><dd>Use tables for tabular data. Add a <code>caption</code> and mark headers with <code>th</code> and <code>scope="col"</code> or <code>scope="row"</code> in simple tables.</dd>
+            </dl>
+            <details class="worked-example">
+              <summary>See a semantic HTML example</summary>
+              <pre tabindex="0" aria-label="Headings, links, lists, and table markup"><code>&lt;!-- Garden information --&gt;
+&lt;section aria-labelledby="visit-title"&gt;
+  &lt;h2 id="visit-title"&gt;Plan a visit&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Wear closed-toe shoes.&lt;/li&gt;
+    &lt;li&gt;&lt;a href="./map.html"&gt;Find the garden entrance&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;table&gt;
+    &lt;caption&gt;Open hours&lt;/caption&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th scope="col"&gt;Day&lt;/th&gt;&lt;th scope="col"&gt;Time&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;&lt;th scope="row"&gt;Tuesday&lt;/th&gt;&lt;td&gt;9 a.m.–noon&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/section&gt;</code></pre>
+            </details>
+            <h3>Read the cascade</h3>
+            <p>A type selector like <code>p</code> matches a tag, <code>.note</code> matches a reusable class, and <code>#hours</code> matches an ID that should be unique on the page. For ordinary author rules in the same layer, higher specificity wins. When competing rules tie on specificity and scope proximity, the later declaration wins. Text color and font family commonly inherit. Margins and padding generally do not.</p>
+            <pre tabindex="0" aria-label="Competing CSS selectors"><code>p { color: #222; }
+.note { color: #513898; }
+.note { color: #452260; } /* Wins for p.note */</code></pre>
+            <p>Use VS Code and Emmet to write markup. Inspect the Styles and Computed panels in DevTools to find overridden rules and final values. Keep keyboard focus visible with <code>:focus-visible</code>. Validate HTML and CSS, then use <code>git status</code>, <code>git add</code>, <code>git commit</code>, and <code>git push</code> to check, stage, record, and publish changes to your GitHub repository. Follow Canvas for course-specific Wakapi setup.</p>
+            <details class="self-check"><summary>Which rule wins if an earlier <code>#hours</code> rule also sets the color?</summary><p>The ID rule wins among these ordinary, same-layer author rules. Its specificity is higher than the class and type selectors. Confirm the result in DevTools.</p></details>
+          </section>
+
+          <section class="lesson" id="box-model" aria-labelledby="box-title">
+            <p class="eyebrow">MODULE 02</p>
+            <h2 id="box-title">Box model &amp; display</h2>
+            <p class="lesson-lead">Predict an element’s size before measuring it. Start at the content and work outward through padding, border, and margin.</p>
+            <dl class="definition-list">
+              <dt>Content &amp; padding</dt><dd>Content holds the text or media. Padding creates space between content and the border.</dd>
+              <dt>Border &amp; margin</dt><dd>The border frames the padding and content. Margin sits outside the border and can create space between boxes. Adjacent vertical block margins can collapse in normal flow.</dd>
+              <dt><code>content-box</code></dt><dd>The declared width applies to the content. Add left and right padding and borders to find the border-box width.</dd>
+              <dt><code>border-box</code></dt><dd>The declared width includes content, padding, and border. Margin remains outside either sizing mode.</dd>
+            </dl>
+            <div class="lab" aria-labelledby="box-lab-label">
+              <h3 id="box-lab-label">Measure a box</h3>
+              <div class="box-lab">
+                <div class="box-controls js-only">
+                  <label for="box-mode">Sizing mode</label>
+                  <select id="box-mode"><option value="content-box">content-box</option><option value="border-box">border-box</option></select>
+                  <label for="box-padding">Padding per side</label>
+                  <input id="box-padding" type="range" min="0" max="22" step="1" value="12">
+                </div>
+                <div class="box-workspace" aria-hidden="true"><div id="box-demo" class="box-demo"><span>Content</span></div></div>
+              </div>
+              <p class="lab-output"><code>width: 120px</code>, <code>border: 4px</code> per side, <code id="padding-text">padding: 12px</code> per side. <strong id="box-result" aria-live="polite">Border box: 152px. Content: 120px.</strong></p>
+            </div>
+            <h3>Block, inline, inline-block</h3>
+            <p>A normal-flow block usually starts on its own line and fills the available inline width when width is auto. Inline text flows with its neighbors. Ordinary inline boxes ignore explicit <code>width</code> and <code>height</code>. Inline-block flows on a line and accepts dimensions. Use relative sizing such as <code>%</code> and <code>rem</code> where it fits the design. Try <code>max-width: 100%; height: auto;</code> for images that must shrink within a parent.</p>
+            <details class="self-check"><summary>A box is 200px wide with 16px padding and a 2px border per side. What does DevTools measure?</summary><p>Under <code>content-box</code>, the border box is <code>200 + 32 + 4 = 236px</code>. Under <code>border-box</code>, it is 200px and the content is 164px wide. The element’s margins are outside both measurements.</p></details>
+          </section>
+
+          <section class="lesson" id="positioning" aria-labelledby="position-title">
+            <p class="eyebrow">MODULE 03</p>
+            <h2 id="position-title">Display &amp; positioning</h2>
+            <p class="lesson-lead">Decide which elements should participate in normal flow before adding offsets, floats, or layout rules.</p>
+            <dl class="definition-list">
+              <dt>Static / relative</dt><dd><code>static</code> is normal flow with no positioning offsets. <code>relative</code> keeps the original space and allows a visual offset. A relatively positioned parent can also anchor an absolutely positioned child.</dd>
+              <dt>Absolute / fixed</dt><dd><code>absolute</code> leaves normal flow and commonly uses the nearest positioned ancestor for offsets. <code>fixed</code> also leaves flow and typically uses the viewport. Certain properties, such as an ancestor’s transform, can change the containing block.</dd>
+              <dt>Sticky / stacking</dt><dd><code>sticky</code> keeps its flow space and sticks at an inset such as <code>top: 0</code> within its scroll container and containing block. If boxes overlap, inspect their stacking contexts before changing <code>z-index</code>.</dd>
+              <dt>Floats / clears</dt><dd><code>float</code> lets text wrap around a box. Use <code>clear: both</code> to start a block below earlier floats on either side. Use <code>display: flow-root</code> on a wrapper when it should enclose its floated children.</dd>
+              <dt>Flexbox</dt><dd>Lay out items along one main axis. <code>justify-content</code> distributes space along that axis, <code>align-items</code> aligns items on the cross axis, and <code>flex-wrap</code> allows another line. Changing <code>flex-direction</code> changes the axes.</dd>
+            </dl>
+            <pre tabindex="0" aria-label="Positioned label and flexible actions"><code>.card { position: relative; padding: 3rem 1rem 1rem; }
+.card-label { position: absolute; top: 1rem; right: 1rem; }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}</code></pre>
+            <details class="self-check"><summary>An absolute label appears in the corner of the page. Where do you look first?</summary><p>Inspect its containing block. If the intended card has no positioning, add <code>position: relative</code> to the card, then check the label’s offsets. Reserve room so the label and content can coexist on a narrow screen.</p></details>
+          </section>
+
+          <section class="lesson" id="design" aria-labelledby="design-title">
+            <p class="eyebrow">MODULE 04</p>
+            <h2 id="design-title">Color &amp; typography</h2>
+            <p class="lesson-lead">Build a hierarchy readers can recognize and a text system they can read comfortably.</p>
+            <h3>Give colors jobs</h3>
+            <p>Assign colors to surfaces, body text, primary actions, secondary accents, and status. Choose a palette that fits the content and brand, then reuse it through CSS custom properties. Color meanings depend on context. Pair feedback colors with a text label or symbol.</p>
+            <ul class="swatches" aria-label="Example color roles">
+              <li><span class="swatch swatch-surface"></span><strong>Surface</strong><code>#F7F4FF</code></li>
+              <li><span class="swatch swatch-ink"></span><strong>Text</strong><code>#241936</code></li>
+              <li><span class="swatch swatch-action"></span><strong>Action</strong><code>#5C35A4</code></li>
+              <li><span class="swatch swatch-accent"></span><strong>Accent</strong><code>#F9A8D4</code></li>
+            </ul>
+            <p>CSS accepts named colors, hex values, RGB channels, and HSL (hue, saturation, lightness). Alpha sets transparency in <code>rgba(0, 0, 0, .25)</code> or <code>rgb(0 0 0 / 25%)</code>. Check a translucent color against its actual background. WCAG AA text contrast calls for at least <strong>4.5:1</strong> for normal text and <strong>3:1</strong> for large text.</p>
+            <h3>Make paragraphs easy to follow</h3>
+            <p>Choose typefaces with fallbacks. Use font size and weight for hierarchy, style for emphasis, and decoration to help identify links. Set a comfortable line length and line height, then use margins or a first-line indent to separate paragraphs. Adjust letter spacing carefully. Crowded letters, long lines, and inconsistent vertical gaps make text harder to follow.</p>
+            <pre tabindex="0" aria-label="Typography rule with fallbacks and measure"><code>.reading {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 65ch;
+}
+.reading p + p { margin-block-start: 1em; }</code></pre>
+            <p>When using Google Fonts, add the provider’s stylesheet link in the head and request the weights you use. Keep the fallback stack so the page remains readable when the web font is slow or unavailable.</p>
+            <details class="self-check"><summary>How would you improve a paragraph that feels long, dense, and hard to scan?</summary><p>Start with a shorter measure and more line height. Group ideas into shorter paragraphs, set a consistent gap, and check weight, size, and contrast on a narrow screen. Test at 200% zoom.</p></details>
+          </section>
+
+          <section class="lesson" id="grid" aria-labelledby="grid-title">
+            <p class="eyebrow">MODULE 05</p>
+            <h2 id="grid-title">CSS Grid</h2>
+            <p class="lesson-lead">Use native Grid when rows and columns need to line up. Start small and add tracks when there is room.</p>
+            <p>Apply <code>display: grid</code> to a container. Its direct children become grid items. <code>grid-template-columns</code> and <code>grid-template-rows</code> define tracks. <code>gap</code> creates space between tracks. Grid lines mark track boundaries, and <code>grid-column: 1 / -1</code> spans the whole explicit grid from its first to last column line.</p>
+            <p><code>fr</code> divides available track space after gaps and other fixed sizing constraints. <code>repeat()</code> repeats track definitions, while <code>minmax(0, 1fr)</code> lets a fractional track shrink below an item’s intrinsic minimum. Long content may still need wrapping.</p>
+            <pre tabindex="0" aria-label="Responsive native CSS Grid"><code>.cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+@media (min-width: 42rem) {
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}</code></pre>
+            <div class="lab" aria-labelledby="grid-lab-label">
+              <h3 id="grid-lab-label">Compare narrow and wide layouts</h3>
+              <div class="grid-control js-only" role="group" aria-label="Grid preview width">
+                <button type="button" data-grid-width="narrow" aria-pressed="false">Narrow</button>
+                <button type="button" data-grid-width="wide" aria-pressed="true">Wide</button>
+              </div>
+              <div class="grid-frame" id="grid-frame" data-width="wide">
+                <div class="grid-sample"><span>News</span><span>Calendar</span><span>Contact</span></div>
+              </div>
+              <p class="lab-output">Preview mode: <strong id="grid-result" aria-live="polite">Wide container.</strong> On a small screen the preview can still stack to fit.</p>
+            </div>
+            <details class="self-check"><summary>Why does <code>grid-template-columns: 2fr 1fr</code> leave room for the gap?</summary><p>Grid subtracts the gap before sharing the available track space. With 600px to fill and a 24px gap, 576px remains. If item sizes impose no extra constraints, the tracks measure 384px and 192px.</p></details>
+          </section>
+
+          <section class="lesson" id="bootstrap" aria-labelledby="bootstrap-title">
+            <p class="eyebrow">MODULE 06</p>
+            <h2 id="bootstrap-title">Bootstrap &amp; publishing</h2>
+            <p class="lesson-lead">Choose what to reuse, read the documentation for the version you load, and test the published build.</p>
+            <h3>Read Bootstrap markup</h3>
+            <p>Add Bootstrap’s CSS from its official starter and place your overrides after it. Load the matching Bootstrap bundle for interactive components such as a collapsing navbar or an offcanvas sidebar. The default Bootstrap grid uses Flexbox and a 12-column span system. A <code>.container</code> sets responsive widths, <code>.row</code> holds columns, and <code>.g-3</code> sets the gutters.</p>
+            <pre tabindex="0" aria-label="A responsive Bootstrap row"><code>&lt;div class="container"&gt;
+  &lt;div class="row g-3"&gt;
+    &lt;div class="col-12 col-md-8"&gt;Main content&lt;/div&gt;
+    &lt;div class="col-12 col-md-4"&gt;Related links&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <p>Both columns span the full row on small screens. At Bootstrap’s <code>md</code> breakpoint and above, the columns share the row in an 8-to-4 ratio.</p>
+            <dl class="definition-list">
+              <dt>Buttons</dt><dd>Combine <code>.btn</code> with a variant such as <code>.btn-primary</code>. Use <code>button</code> for actions and <code>a href="…"</code> for navigation.</dd>
+              <dt>Navbars &amp; sidebars</dt><dd>A collapsing navbar pairs a toggler with a matching target ID. A sidebar can use a semantic <code>nav</code> or <code>aside</code>, and Bootstrap Offcanvas can turn it into a drawer. Check the trigger label, keyboard focus, and mobile behavior.</dd>
+              <dt>Other dependencies</dt><dd>Bootstrap supplies a design framework. jQuery is a JavaScript library. Google Fonts supplies web fonts, and Font Awesome supplies icons. Match Font Awesome markup to its version, such as <code>fa fa-star</code> in v4 and <code>fa-solid fa-star</code> in v6. Give icon-only controls an accessible name.</dd>
+              <dt>Dependency delivery</dt><dd>A CDN serves files directly. npm and Yarn install and track packages for projects with a dependency workflow. Bower appears in older projects and course material. Check the docs, licenses, versions, and required CSS or JavaScript before choosing a dependency.</dd>
+            </dl>
+            <details class="worked-example">
+              <summary>Inspect a Bootstrap navbar and button</summary>
+              <p>This component assumes the starter’s CSS and JavaScript bundle are loaded. Match the toggler’s <code>data-bs-target</code> and <code>aria-controls</code> to the collapse ID.</p>
+              <pre tabindex="0" aria-label="Bootstrap navbar and link styled as a button"><code>&lt;nav class="navbar navbar-expand-md" aria-label="Garden"&gt;
+  &lt;div class="container"&gt;
+    &lt;a class="navbar-brand" href="./"&gt;Campus Garden&lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#garden-menu"
+            aria-controls="garden-menu" aria-expanded="false"
+            aria-label="Toggle garden navigation"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="garden-menu"&gt;
+      &lt;div class="navbar-nav"&gt;
+        &lt;a class="nav-link" href="#hours"&gt;Hours&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;a class="btn btn-primary ms-md-auto" href="./map.html"&gt;
+        View garden map
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+              <p>For a slide-out sidebar, use the <a href="https://getbootstrap.com/docs/5.3/components/offcanvas/">Bootstrap Offcanvas pattern</a> with a named panel and a close control.</p>
+            </details>
+            <h3>Publish through GitHub Pages</h3>
+            <p>Push the site files, choose a publishing source in the repository’s Pages settings, and put <code>index.html</code> at that source’s root. Open the Pages URL in a fresh browser session. For a project site, prefer paths such as <code>./styles.css</code> and match filenames exactly, including capitalization.</p>
+            <details class="self-check"><summary>Your Bootstrap navbar styles look right, but its toggle does nothing. What do you check?</summary><p>Check that the matching Bootstrap bundle loads and that <code>data-bs-target</code> matches the collapse element’s ID. Use DevTools Network and Console to spot a missing file or script error. Then verify the toggle with the keyboard.</p></details>
+          </section>
+
+          <section class="lesson practice" id="practice" aria-labelledby="practice-title">
+            <p class="eyebrow">MODULES 07–08</p>
+            <h2 id="practice-title">Review &amp; finals</h2>
+            <p class="lesson-lead">Predict the result before expanding each answer. Then explain the rule out loud or reproduce the behavior in a small local practice page.</p>
+            <div class="practice-questions">
+              <details class="self-check"><summary>A stylesheet is missing on Pages, but the HTML loads. What do you inspect?</summary><p>Check the requested CSS URL in DevTools Network for a 404. On a project site, <code>/styles.css</code> points at the domain root, while <code>./styles.css</code> resolves beside the HTML page. Confirm the file is committed to the Pages source and its name matches the link exactly.</p></details>
+              <details class="self-check"><summary>Why can a 100% wide input overflow its container?</summary><p>With <code>content-box</code>, the content alone can occupy the full available width. Padding and border add to it. Apply <code>box-sizing: border-box</code> and inspect whether margins or other rules also contribute.</p></details>
+              <details class="self-check"><summary>Which tool fits each task: wrapped image, button row, card collection, or corner label?</summary><p>Use a float for text around the image, Flexbox for the button row, Grid for aligned card columns and rows, and absolute positioning inside a positioned parent for the corner label.</p></details>
+              <details class="self-check"><summary>A design uses pale text and a red border as the only sign of an error. How would you improve it?</summary><p>Increase the text contrast against its surface and add a clear error message tied to the problem. Check keyboard focus, test at 200% zoom, and verify the message is still visible in a narrow layout.</p></details>
+              <details class="self-check"><summary>A three-column design clips long links on a phone. What do you change and retest?</summary><p>Start with one column at narrow widths. Set flexible tracks and allow long links to wrap, for example with <code>overflow-wrap: anywhere</code>. Use DevTools to find the overflowing element and retest at narrow, medium, and wide widths.</p></details>
+            </div>
+
+            <h3>Independent practice</h3>
+            <p>Make a small event page with a header, a main article, a related-links area, and a footer. Link an external stylesheet, build a readable type scale and palette, then use Grid to stack the content on a phone and place the related links alongside the article when there is space.</p>
+            <ul>
+              <li>Tab through the page to confirm focus is visible and links follow a sensible order.</li>
+              <li>Resize the viewport, try 200% zoom, and check that nothing important clips or overlaps.</li>
+              <li>Validate the HTML and CSS, and explain one issue you found and how you fixed it.</li>
+            </ul>
+            <div class="course-note">
+              <p>Use <a href="https://whccd.instructure.com/courses/30392/modules">Canvas Modules</a> for official instructions and deadlines. AI-assisted and AI-generated student content are prohibited in this course.</p>
+            </div>
+          </section>
+
+          <section class="lesson references" id="references" aria-labelledby="references-title">
+            <h2 id="references-title">References</h2>
+            <ul class="reference-list">
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN HTML</a><span>Elements, semantics, and attributes</span></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN CSS</a><span>Properties, selectors, Flexbox, and Grid</span></li>
+              <li><a href="https://docs.emmet.io/cheat-sheet/">Emmet cheat sheet</a><span>Shortcuts for writing markup</span></li>
+              <li><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Bootstrap 5.3</a><span>Starter, grid, and components</span></li>
+              <li><a href="https://developers.google.com/fonts/docs/getting_started">Google Fonts</a><span>Load and apply web fonts</span></li>
+              <li><a href="https://docs.fontawesome.com/web/">Font Awesome</a><span>Install and label icons</span></li>
+              <li><a href="https://validator.w3.org/nu/">HTML validation</a><span>Check your markup</span></li>
+              <li><a href="https://jigsaw.w3.org/css-validator/">CSS validation</a><span>Check your stylesheets</span></li>
+              <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html">W3C text contrast</a><span>Contrast guidance and thresholds</span></li>
+              <li><a href="https://docs.github.com/en/pages">GitHub Pages docs</a><span>Publishing and troubleshooting</span></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner"><p><strong>COMP-001B</strong> · Lemoore College · Fall 2026</p><a href="#top">Back to top</a></div>
+  </footer>
+</body>
+</html>
